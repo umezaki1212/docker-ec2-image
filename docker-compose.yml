@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  amazonlinux:
+    build: .
+    privileged: true
+    restart: always
+    volumes:
+      - type: bind
+        source: ./share
+        target: /share
