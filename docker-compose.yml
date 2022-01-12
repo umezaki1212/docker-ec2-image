@@ -5,5 +5,10 @@ version: '3'
 services:
   amazonlinux:
     build: .
+#    command:
+#      - /sbin/init
     privileged: true
     restart: always
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroup_parent: host
